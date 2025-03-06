@@ -22,9 +22,9 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Dat Hoang"
 description              : "Just a simple person striving to be my best."
-url                      : "https://github.com/jinwoohwang" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://github.com/dathwang" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "jinwoohwang/jinwoohwang.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "dathwang/dathwang.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -36,7 +36,7 @@ copyright_url            : # "copyright" URL, defaults to site.url
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
-    shortname            : "jinwoohwang" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : # "jinwoohwang" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -146,7 +146,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/jinwoohwang"
+      url: "https://github.com/dathwang"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -162,7 +162,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/jinwoohwan"
+      url: "https://github.com/dathwang"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
