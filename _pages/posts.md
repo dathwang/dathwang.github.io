@@ -2,7 +2,7 @@
 layout: single
 author_profile: true
 title: Posts
-permalink: /posts/
+permalink: /posts.html
 ---
 
 <ul>
