@@ -1,10 +1,10 @@
 # main links links
 main:
   - title: "Posts"
-    url: /_pages/posts.html
+    url: /posts/
     
   - title: "Categories"
-    url: /_pages/categories.html
+    url: /categories/
 
   - title: "About"
-    url: /_pages/about.html
+    url: /about/
