@@ -4,7 +4,7 @@ main:
     url: /_pages/posts.html
     
   - title: "Categories"
-    url: /_pages//categories.html
+    url: /_pages/categories.html
 
   - title: "About"
-    url: /_pages//about.html
+    url: /_pages/about.html
