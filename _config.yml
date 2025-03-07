@@ -78,7 +78,7 @@ analytics:
 # Site Author
 author:
   name             : "Dat Hoang"
-  avatar           : "/images/bio-logo.jpg"
+  avatar           : "bio-logo.jpg"
   bio              : "Rome wasn’t built in a day, and neither will my future self."
   location         : "Vietnam"
   email            : "datquochoang0587@gmail.com"
@@ -89,7 +89,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "https://github.com/dathwang"
+  github           : "dathwang/"
   google_plus      :
   keybase          :
   instagram        :
