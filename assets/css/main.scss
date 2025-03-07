@@ -10,18 +10,9 @@ search: false
 
 pre,
 code {
+    font-size: 10px;
     white-space: pre;
     word-wrap: normal;
     overflow-x: auto;
-}
-
-.post-content {
-    font-size: 10px; /* Adjust this value as needed */
     line-height: 1.6;
-}
-  
-.post-content pre {
-    font-size: 10px; /* Makes code blocks slightly smaller */
-    overflow-x: auto; /* Enables horizontal scrolling */
-    white-space: pre; /* Ensures code stays in one line */
 }
