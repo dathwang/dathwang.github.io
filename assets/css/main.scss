@@ -8,8 +8,9 @@ search: false
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-pre {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    overflow-x: hidden;
+pre,
+code {
+    white-space: pre;
+    word-wrap: normal;
+    overflow-x: auto;
 }
