@@ -14,3 +14,14 @@ code {
     word-wrap: normal;
     overflow-x: auto;
 }
+
+.page-content {
+    max-width: 1000px; /* Adjust this value as needed */
+    margin: 0 auto;
+}
+
+.post-content pre {
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
