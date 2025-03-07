@@ -2,7 +2,7 @@
 layout: single
 author_profile: true
 title: About
-permalink: /about.html
+permalink: /about
 ---
 
 ## dathwang@localhost:~$ whoami

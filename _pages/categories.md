@@ -2,7 +2,7 @@
 layout: single
 author_profile: true
 title: Categories
-permalink: /categories.html
+permalink: /categories
 ---
 
 <h2>Protostar</h2>
