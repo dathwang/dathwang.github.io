@@ -89,7 +89,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "dathwang/"
+  github           : "https://github.com/dathwang"
   google_plus      :
   keybase          :
   instagram        :
@@ -106,11 +106,6 @@ author:
   xing             :
   youtube          : 
 
-# Collections
-collections:
-  pages:
-    output: true
-    permalink: /:path/
 
 # Reading Files
 include:
