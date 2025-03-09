@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Protostar - Uncontrolled Format String Challenges 0-4"
+categories: Protostar
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true
