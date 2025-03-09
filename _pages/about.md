@@ -1,6 +1,7 @@
 ---
 layout: single
 author_profile: true
+title:""
 permalink: /about.html
 ---
 
