@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Protostar - Stack Challenges 0-7"
+categories: Protostar
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true
