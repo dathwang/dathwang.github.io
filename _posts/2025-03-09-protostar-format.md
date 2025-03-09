@@ -432,15 +432,15 @@ This looks good as we now have data written to each byte of `target`. Since we h
 
 We'll write the target value **byte by byte**, starting with the most significant byte (MSB) of target (0x080486f4), which needs to be `0x44 = 68`. Since we have already printed 16 bytes of data, we only need additonal 52 bytes of data. 
 
-```math
+\[
 68 - 16 = 52
-```
+\]
 
 Then the next byte, `0x55 = 85`. The same logic still applies here!
 
-```math
+\[
 85 - 68 = 17
-```
+\]
 
 However, at the next byte, we have to write `0x02`, which is smaller than `0x55 (85)`. How can we write `0x02` to the next byte?
 
@@ -586,7 +586,7 @@ user@protostar:/opt/protostar/bin$ objdump -TR ./format4 | grep exit
 
 Now, we can again use **Direct Parameter Access (DPA)**, and short-write to overwrite the address in **exit()** to address of **hello()**.
 
-Follow the tip in **Two-Write Method** in **Format 3**, we will choose the smallest value first. In this case is `0x0804`. We already have 8 bytes written from 2 addresses, here is the number of bytes needed for our **width length**:
+Follow the tip in **Two-Write Method** in **Format 3**, we will choose the smallest value first. In this case is `0x0804`. We already have 8 bytes written from 2 addresses, here is the number of bytes needed for our **width length**: 
 
 ```math
 0x0804 - 8 = 2044
