@@ -1,10 +1,9 @@
 ---
 layout: single
 author_profile: true
+title: dathwang@localhost:~$ whoami
 permalink: /about.html
 ---
-
-### dathwang@localhost:~$ whoami
 
 Hello, I'm Dat Hwang, still a noob striving to be my best in Reverse Engineering.
 

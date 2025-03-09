@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Protostar - Uncontrolled Format String Challenges 0-4"
+title: "Protostar - Format String Challenges 0-4"
 categories: Protostar
 toc: true
 toc_label: "Table of Contents"
@@ -432,23 +432,17 @@ This looks good as we now have data written to each byte of `target`. Since we h
 
 We'll write the target value **byte by byte**, starting with the most significant byte (MSB) of target (0x080486f4), which needs to be `0x44 = 68`. Since we have already printed 16 bytes of data, we only need additonal 52 bytes of data. 
 
-$$
-68 - 16 = 52
-$$
+$$68 - 16 = 52$$
 
 Then the next byte, `0x55 = 85`. The same logic still applies here!
 
-$$
-85 - 68 = 17
-$$
+$$85 - 68 = 17$$
 
 However, at the next byte, we have to write `0x02`, which is smaller than `0x55 (85)`. How can we write `0x02` to the next byte?
 
 The trick here is simple. We just need to provide a value which is greater than `0xff (255)`, and the extra bits will overflow to the next byte. In this case, I will choose `0x102 = 258`:
 
-$$
-258 - 85 = 173
-$$
+$$258 - 85 = 173$$
 
 Here is a clearer picture why I choose `0x102`:
 
@@ -484,9 +478,7 @@ Since each write covers two bytes, we only need to reference two stack slots (**
 
 The trick here is that we should **start with smallest value first**, which is `0x0102`. Since we already have 8 bytes due to our memory addresses (**0x080496f4** and **0x080496f6**), the number of additional bytes we need to print for `0x080496f6` is:
 
-$$
-0x0102 - 8 = 250
-$$
+$$0x0102 - 8 = 250$$
 
 ``` shell
 user@protostar:/opt/protostar/bin$ python -c 'print "\xf6\x96\x04\x08\xf4\x96\x04\x08%250x%12$hn"' | ./format3
@@ -496,9 +488,7 @@ target is 01020000 :(
 
 Nice~ We have successfully overwritten `0x0102`, now we just need to calculate the rest:
 
-$$
-0x5544 - 258 = 21570
-$$
+$$0x5544 - 258 = 21570$$
 
 ``` shell
 user@protostar:/opt/protostar/bin$ python -c 'print "\xf6\x96\x04\x08\xf4\x96\x04\x08%250x%12$hn%21570x%13$hn"' | ./format3
@@ -588,15 +578,11 @@ Now, we can again use **Direct Parameter Access (DPA)**, and short-write to over
 
 Follow the tip in **Two-Write Method** in **Format 3**, we will choose the smallest value first. In this case is `0x0804`. We already have 8 bytes written from 2 addresses, here is the number of bytes needed for our **width length**:
 
-$$
-0x0804 - 8 = 2044
-$$
+$$0x0804 - 8 = 2044$$
 
 Next, we need to write `0x84b4 = 33972`:
 
-$$
-0x84b4 - 2052 = 31920
-$$
+$$0x84b4 - 2052 = 31920$$
 
 Here is the exploit:
 
@@ -612,9 +598,7 @@ Since the address of `exit()` function stays in ***GOT***, where it is unchanged
 
 So, we can jump directly to the last part of our write, which is `0x84b4 = 33972`:
 
-$$
-33972 - 4 = 33968
-$$
+$$33972 - 4 = 33968$$
 
 Let's rebuild our exploit:
 
