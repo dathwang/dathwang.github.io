@@ -1,9 +1,9 @@
 # main links
 main:
-  - title: "Posts"
-    url: /posts.html
+  - title: "Recent Posts"
+    url: https://dathwang.github.io/
     
-  - title: "Categories"
+  - title: "All Articles"
     url: /categories.html
 
   - title: "About"  
