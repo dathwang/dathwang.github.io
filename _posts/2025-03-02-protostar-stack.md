@@ -1040,10 +1040,10 @@ Here is a clearer representation:
 3. THE SECOND RET
 
 ------------------------------------------------------
-| AAAA....TTTT  |  0x080484f9  |  STACK_ADDR  |  SHELLCODE_ADDR |
+| AAAA....TTTT   |  STACK_ADDR  |  SHELLCODE_ADDR |
 ------------------------------------------------------
-                                            ▲
-                                            └── Second ret pops this value & jumps to our shellcode
+                              ▲
+                              └── Second ret pops this value & jumps to our shellcode
 ```
 
 This is my script, and the link to the shellcode that I use => <a href="https://shell-storm.org/shellcode/files/shellcode-575.html" target="_blank">shellcode</a>
