@@ -1178,9 +1178,9 @@ So right now, our stack looks like this:
 |------------------|
 ```
 
-You might think how does this help us to solve the problem right? The answer lies in the process of overwriting the return address of **getpath** function. 
+You might think how does this help us to solve the problem right? This will help us to have a better visualization of the stack frame, and we will use this to **simulate the stack frame** when a call to **system()** is made.   
 
-By doing so, we can redirect program execution to `system()`, which means the **ret** instruction acts as an indirect call to **system()**. And we will set up the stack just like in the scenario above, placing the return address of the call to **system** and the argument ***"/bin/sh"*** for it! 
+To be specific, we can redirect program execution to `system()`, which means the **ret** instruction acts as an ***indirect call*** to **system()**. And we will set up the stack just like in the scenario below, placing the return address of the call to **system** and the argument ***"/bin/sh"*** for it! 
 
 Stack representation for our solution:
 
@@ -1191,7 +1191,7 @@ Stack representation for our solution:
 |------------------|
 | Fake return addr |  
 |------------------|
-|  system() addr   | 
+|  system() addr   |  <--------- ret here!
 |------------------|
 |     Padding      | 
 |------------------|
@@ -1235,15 +1235,20 @@ Mapped address spaces:
         0xb7ffe000 0xb7fff000     0x1000    0x1a000         /lib/ld-2.11.2.so
         0xb7fff000 0xb8000000     0x1000    0x1b000         /lib/ld-2.11.2.so
         0xbffeb000 0xc0000000    0x15000          0           [stack]
-(gdb) quit
-.....
+```
+
+I use `gdb` to find the base address of **libc** in memory (0xb7e97000). Then, I use **strings** command to locate the offset of **"/bin/sh"** inside libc (0x11f3bf). 
+
+``` shell
 user@protostar:~$ strings -a -t x /lib/libc-2.11.2.so | grep "/bin/sh"
  11f3bf /bin/sh
 ```
 
-I use `gdb` to find the base address of **libc** in memory (0xb7e97000). Then, I use strings to locate the offset of **"/bin/sh"** inside libc (0x11f3bf). 
+By adding these two values together, I compute the address of **"/bin/sh"**: 
 
-By adding these two values together, I compute the address of **"/bin/sh"**: 0xb7e97000 + 0x11f3bf = 0xb7fb63bf.
+$$
+0xb7e97000 + 0x11f3bf = 0xb7fb63bf.
+$$
 
 Here is my script:
 
@@ -1335,7 +1340,7 @@ Below is a representation of the stack, which I will use to create a payload tha
 |------------------|
 |  system() addr   | 
 |------------------|
-|     ret addr     | 
+|     ret addr     |  <--------- ret here!
 |------------------|
 |     Padding      | 
 |------------------|
@@ -1385,7 +1390,7 @@ user@protostar:~$ strings -a -t x /lib/libc-2.11.2.so | grep "/bin/sh"
  11f3bf /bin/sh
 ```
 
-So, the address of **"/bin/sh"** is 0xb7e97000 + 0x11f3bf.
+So, the address of **"/bin/sh"** is $0xb7e97000 + 0x11f3bf$.
 
 Here is my script:
 
