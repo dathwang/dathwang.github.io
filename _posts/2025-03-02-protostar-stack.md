@@ -1390,7 +1390,11 @@ user@protostar:~$ strings -a -t x /lib/libc-2.11.2.so | grep "/bin/sh"
  11f3bf /bin/sh
 ```
 
-So, the address of **"/bin/sh"** is $0xb7e97000 + 0x11f3bf$.
+So, the address of **"/bin/sh"**: 
+
+$$
+0xb7e97000 + 0x11f3bf
+$$.
 
 Here is my script:
 
